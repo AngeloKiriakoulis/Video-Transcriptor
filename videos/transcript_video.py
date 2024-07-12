@@ -1,17 +1,25 @@
 # Task 2: Create the transcript using OpenAI's Whisper pre-trained model.
 
 import pandas as pd
-from transformers import pipeline
-
-"""pipeline(): It’s like a toolbox, handling most of the hard work. It follows specific steps to produce desired outputs for various tasks. Just select the task, and the pipeline does the rest."""
+import whisper
 
 def transcript(video_file):
 
-  transcriber = pipeline(task="automatic-speech-recognition", model="openai/whisper-small")
-  transcription_results = transcriber(video_file)
-  transcription_text = transcription_results.get('text', "No transcription results found.")
+  model = whisper.load_model("base")
+  result = model.transcribe(video_file)["segments"]
 
-  output = pd.DataFrame({'Video Name': [video_file],
-                         "Transcript": [transcription_text]})
-  
-  return (video_file, transcription_text)
+  # Extracting the fields into lists
+  start_times = [segment["start"] for segment in result]
+  end_times = [segment["end"] for segment in result]
+  texts = [segment["text"] for segment in result]
+
+  # Creating the DataFrame
+  transcript_df = pd.DataFrame({
+      "start": start_times,
+      "end": end_times,
+      "text": texts
+  })
+
+  print(transcript_df)
+
+transcript("videos/1.mp4")
