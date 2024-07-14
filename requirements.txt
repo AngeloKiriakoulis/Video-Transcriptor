@@ -1,0 +1,53 @@
+Bottleneck @ file:///C:/b/abs_f05kqh7yvj/croot/bottleneck_1707864273291/work
+Brotli @ file:///C:/b/abs_3d36mno480/croot/brotli-split_1714483178642/work
+certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1718025014955/work/certifi
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+colorama @ file:///C:/b/abs_a9ozq0l032/croot/colorama_1672387194846/work
+filelock @ file:///C:/b/abs_f2gie28u58/croot/filelock_1700591233643/work
+fsspec @ file:///C:/b/abs_d5jzmndkba/croot/fsspec_1714461594761/work
+gmpy2 @ file:///C:/ci/gmpy2_1645455782955/work
+huggingface_hub @ file:///C:/b/abs_2629p5gdd8/croot/huggingface_hub_1716498314460/work
+idna @ file:///C:/b/abs_aad84bnnw5/croot/idna_1714398896795/work
+importlib-metadata @ file:///C:/b/abs_c1egths604/croot/importlib_metadata-suite_1704813568388/work
+intel-openmp==2021.4.0
+Jinja2 @ file:///C:/b/abs_92fccttino/croot/jinja2_1716993447201/work
+llvmlite==0.43.0
+MarkupSafe @ file:///C:/b/abs_ecfdqh67b_/croot/markupsafe_1704206030535/work
+mkl==2021.4.0
+mkl-fft==1.3.1
+mkl-random @ file:///C:/ci/mkl_random_1626186184308/work
+mkl-service==2.4.0
+more-itertools==10.3.0
+mpmath @ file:///C:/b/abs_7833jrbiox/croot/mpmath_1690848321154/work
+networkx @ file:///C:/b/abs_3bxnu56g9d/croot/networkx_1717597507456/work
+numba==0.60.0
+numexpr @ file:///C:/b/abs_a7kbak88hk/croot/numexpr_1668713882979/work
+numpy==2.0.0
+openai-whisper @ git+https://github.com/openai/whisper.git@ba3f3cd54b0e5b8ce1ab3de13e32122d0d5f98ab
+opencv-python==4.10.0.84
+packaging @ file:///C:/b/abs_cc1h2xfosn/croot/packaging_1710807447479/work
+pandas @ file:///D:/bld/pandas_1715897793875/work
+pillow @ file:///C:/b/abs_95ls_qh4c2/croot/pillow_1714398870615/work
+PySocks @ file:///C:/ci/pysocks_1605307512533/work
+python-dateutil @ file:///C:/b/abs_3au_koqnbs/croot/python-dateutil_1716495777160/work
+pytube==15.0.0
+pytz @ file:///C:/b/abs_6ap4tsz1ox/croot/pytz_1713974360290/work
+PyYAML @ file:///C:/b/abs_782o3mbw7z/croot/pyyaml_1698096085010/work
+regex @ file:///C:/b/abs_d5e2e5uqmr/croot/regex_1696515472506/work
+requests @ file:///C:/b/abs_9c5n24p1y7/croot/requests_1716902867639/work
+safetensors @ file:///C:/b/abs_fb_felonp1/croot/safetensors_1719507965100/work
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+sympy==1.12.1
+tbb==2021.13.0
+tiktoken==0.7.0
+tokenizers @ file:///C:/b/abs_ba1xnwbavr/croot/tokenizers_1708633883417/work
+torch==2.3.1
+torchaudio==2.3.1
+torchvision==0.18.1
+tqdm @ file:///C:/b/abs_a7h7n45ccq/croot/tqdm_1716395987133/work
+transformers @ file:///C:/b/abs_364tv27tkd/croot/transformers_1719822600990/work
+typing_extensions @ file:///C:/b/abs_0as9mdbkfl/croot/typing_extensions_1715268906610/work
+tzdata @ file:///croot/python-tzdata_1690578112552/work
+urllib3 @ file:///C:/b/abs_a7hvzm4y95/croot/urllib3_1718912661242/work
+win-inet-pton @ file:///C:/ci/win_inet_pton_1605306162074/work
+zipp @ file:///C:/b/abs_b0beoc27oa/croot/zipp_1704206963359/work
