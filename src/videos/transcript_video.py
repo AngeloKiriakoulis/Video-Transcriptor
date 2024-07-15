@@ -1,7 +1,4 @@
 # Task 2: Create the transcript using OpenAI's Whisper pre-trained model.
-#import os
-#os.system("pip install pandas")
-#os.system("pip install -U openai-whisper")
 import pandas as pd
 import whisper
 

@@ -1,0 +1,6 @@
+src\videos\__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+.dockerignore
