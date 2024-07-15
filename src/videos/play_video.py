@@ -1,3 +1,6 @@
+#import os
+#os.system("pip install pandas opencv-python")
+
 import cv2 as cv
 
 """Dependency Conflicts: conda and pip use different dependency resolution strategies. Conda tries to ensure that all installed packages are compatible with each other, whereas pip installs packages and their dependencies in isolation."""
