@@ -1,11 +1,14 @@
 # Task 2: Create the transcript using OpenAI's Whisper pre-trained model.
+import os
 import pandas as pd
 import whisper
+def process_transcription():
+  pass
 
 def transcript(video_file):
 
   model = whisper.load_model("base")
-  result = model.transcribe(video_file)["segments"]
+  result = model.transcribe(audio = video_file)["segments"]
 
   # Extracting the fields into lists
   start_times = [segment["start"] for segment in result]
@@ -19,6 +22,6 @@ def transcript(video_file):
       "text": texts
   })
 
-  print(transcript_df)
+  return (video_file, transcript_df)
 
-transcript("src/videos/1.mp4")
+# print(transcript("src/videos/1.mp4"))

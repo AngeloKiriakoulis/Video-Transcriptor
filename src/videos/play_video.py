@@ -12,7 +12,7 @@ def play(video_file, transcript = None):
   
     # Use putText() method for inserting text on video 
     cv.putText(frame,  
-              transcript,  
+              transcript["text"][0],  
               (50, 50),  
               font, 1,  
               (255, 255, 255),  
