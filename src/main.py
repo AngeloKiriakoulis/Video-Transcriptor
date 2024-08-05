@@ -1,5 +1,5 @@
 from videos.play_video import play
-from videos.transcript_video import transcript, process_transcription
+from videos.transcript_video import transcript
 import warnings
 warnings.filterwarnings("ignore")
 
