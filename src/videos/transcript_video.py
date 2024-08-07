@@ -12,7 +12,7 @@ def transcript(video_file):
   # Extracting the fields into lists
   start_times = [word["start"] for segment in result["segments"] for word in segment["words"]]
   end_times = [word["end"] for segment in result["segments"] for word in segment["words"]]
-  words = [word['word'] for segment in result["segments"] for word in segment["words"]]
+  words = [word['word'].replace(" ","") for segment in result["segments"] for word in segment["words"]]
 
   # Creating the DataFrame
   transcript_df = pd.DataFrame({
