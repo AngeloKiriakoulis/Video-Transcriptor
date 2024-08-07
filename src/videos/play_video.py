@@ -57,5 +57,4 @@ def play(video_file, transcript=None):
 
   # Release the memory used for parsing the video.
   cap.release()
-  out.release()
   cv.destroyAllWindows()
