@@ -4,3 +4,4 @@ src\videos\__pycache__
 .git
 .gitignore
 .dockerignore
+.vscode

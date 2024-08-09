@@ -1,5 +1,4 @@
 # Task 2: Create the transcript using OpenAI's Whisper pre-trained model.
-import os
 import pandas as pd
 import whisper
 import warnings
