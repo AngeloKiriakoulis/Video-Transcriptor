@@ -5,6 +5,7 @@ import whisper
 import warnings
 warnings.filterwarnings("ignore")
 
+
 def transcript(video_file):
   model = whisper.load_model("base")
   result = model.transcribe(audio = video_file, word_timestamps=True)
@@ -23,4 +24,4 @@ def transcript(video_file):
 
   return (video_file, transcript_df)
 
-# print(transcript("src/videos/1.mp4"))
+

@@ -3,6 +3,7 @@ import time
 import cv2 as cv
 from ffpyplayer.player import MediaPlayer
 
+
 def play(video_file, transcript=None):
   cap = cv.VideoCapture(video_file)
   cap.set(cv.CAP_PROP_BUFFERSIZE, 2)
