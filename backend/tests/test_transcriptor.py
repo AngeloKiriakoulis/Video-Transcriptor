@@ -1,5 +1,5 @@
 import pandas as pd
-from utils.transcript_video import transcript
+from app.utils.transcript_video import transcript
 
 result1 = transcript("videos/1.mp4")
 result2 = transcript("videos/1.mp4")
