@@ -1,5 +1,4 @@
 import datetime
-import time
 import cv2 as cv
 from ffpyplayer.player import MediaPlayer
 
