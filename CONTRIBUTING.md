@@ -26,7 +26,7 @@ Thank you for your interest in contributing to my project! This project aims to 
 
 - **TODO:**
   - **Silence Detection**: Probably will check if the ending point of the last word is >=1sec apart of the starting point of the next word.
-  - **Exclusion Approach**: When the `.srt` file is created, we will exclude these in-between time sections. 
+  - **Exclusion Approach**: When the `.srt` file is created, we will exclude these in-between time sections.
 
 ## Input and Output Formats
 
