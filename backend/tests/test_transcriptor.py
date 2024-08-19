@@ -1,36 +1,36 @@
-import pandas as pd
-from app.utils.transcript_video import transcript
+import os
+import pytest
+from app.utils.transcript_video import Transcriptor
 
-result1 = transcript("videos/1.mp4")
-result2 = transcript("videos/1.mp4")
-tran = result1[1]
+@pytest.fixture
+def transcriptor():
+    return Transcriptor(model_size="base")  # Using a smaller model for testing
 
-def test_result_type():
-    # Test the function with a valid .mp4 file path
-    assert isinstance(result1, tuple)
+def test_format_time(transcriptor):
+    # Test cases: (input seconds, expected formatted time)
+    test_cases = [
+        (0, "00:00:00,000"),
+        (1.5, "00:00:01,500"),
+        (65.789, "00:01:05,789"),
+        (3661.123, "01:01:01,123")
+    ]
+    
+    for seconds, expected in test_cases:
+        assert transcriptor._format_time(seconds) == expected
 
-def test_result_len():
-    # Test the function with a valid .mp4 file path
-    assert len(result1) == 2  # Assuming the tuple has two elements
+def test_transcribe_to_srt(tmpdir, transcriptor):
+    test_video_path = "videos/input.mp4"
+    test_output_path = "output/output.mp4"
+    # Run the transcription method
+    transcriptor.transcribe_to_srt(test_video_path, test_output_path)
 
-def test_transcript_type():
-    # Test the function with a valid .mp4 file path
-    assert isinstance(tran, pd.DataFrame)
+    # Check if the output file was created
+    assert os.path.exists(test_output_path)
 
-def test_empty_dataframe():
-    # Test the function with a video file with no transcriptable content
-    assert not tran.empty
+    # Check the contents of the SRT file
+    with open(test_output_path, "r") as f:
+        lines = f.readlines()
+        assert len(lines) > 0  # Ensure that some content was written
 
-def test_dataframe_columns():
-    # Test the function with a valid .mp4 file path
-    expected_columns = ["start", "end", "word"]  # Adjust according to the actual columns
-    assert list(tran.columns) == expected_columns
+    # Additional assertions can be added based on expected format/content
 
-def test_dataframe_content():
-    # Test the function with a valid .mp4 file path
-    assert "Today" in tran["word"].values  # Example text to check for
-    assert tran["start"].min() >= 0  # Ensure valid start times
-
-def test_consistent_results():
-    # Test the function multiple times with the same .mp4 file
-    pd.testing.assert_frame_equal(result1[1], result2[1])

@@ -8,24 +8,6 @@ class Transcriptor:
   def __init__(self, model_size="base"):
     # Load the Whisper model
     self.model = whisper.load_model(model_size)
-  
-  def transcribe_to_df(self, video_file):
-    # Transcribe the audio and get word timestamps
-    result = self.model.transcribe(audio=video_file, word_timestamps=True)
-
-    # Extracting the fields into lists
-    start_times = [word["start"] for segment in result["segments"] for word in segment["words"]]
-    end_times = [word["end"] for segment in result["segments"] for word in segment["words"]]
-    words = [word['word'].replace(" ", "") for segment in result["segments"] for word in segment["words"]]
-
-    # Creating the DataFrame
-    transcript_df = pd.DataFrame({
-      "start": start_times,
-      "end": end_times,
-      "word": words
-    })
-
-    return transcript_df
 
   def transcribe_to_srt(self, video_file, output_file):
     # Transcribe the audio and get word timestamps
