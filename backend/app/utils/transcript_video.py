@@ -1,6 +1,7 @@
 import pandas as pd
 import whisper
 import warnings
+from itertools import zip_longest
 
 warnings.filterwarnings("ignore")
 
@@ -9,7 +10,7 @@ class Transcriptor:
     # Load the Whisper model
     self.model = whisper.load_model(model_size)
 
-  def transcribe_to_srt(self, video_file, output_file):
+  def transcribe_to_srt(self, video_file, output_file, pivot = 1):
     # Transcribe the audio and get word timestamps
     result = self.model.transcribe(audio=video_file, word_timestamps=True)
 
@@ -19,10 +20,18 @@ class Transcriptor:
     
     # Loop through the segments and generate .srt format
     for segment in result["segments"]:
-      for word in segment["words"]:
-        start_time = word['start']
-        end_time = word['end']
-        text = word['word'].strip()
+      # Use zip_longest with a fillvalue of None to handle incomplete chunks
+      for word_group in zip_longest(*(iter(segment["words"]),) * pivot, fillvalue=None):
+        # Filter out any None values from word_group
+        valid_words = [w for w in word_group if w is not None]
+        
+        if not valid_words:
+            continue  # Skip empty word groups
+
+        # Concatenate the words and retrieve start and end times
+        start_time = valid_words[0]['start']
+        end_time = valid_words[-1]['end']
+        text = ''.join(w['word'] for w in valid_words).strip()
 
         # Format time for SRT (hours:minutes:seconds,milliseconds)
         start_time_str = self._format_time(start_time)
