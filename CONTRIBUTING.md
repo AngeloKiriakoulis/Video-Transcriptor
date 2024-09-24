@@ -6,15 +6,15 @@ Thank you for your interest in contributing to my project! This project aims to 
 
 ## Main Modules
 
-### transcript_video
+### transcribe_to_srt (Class: Transcriptor)
 
-- **Function**: Transcribes the video using the Whisper model.
+- **Function**: Transcribes the video using the Whisper model and generates a .srt file with word-level timestamps.
 - **Current Input**: Video file path (local files).
-- **Current Output**: A Pandas DataFrame with columns "start", "end", "word".
+- **Current Output**: .srt file with word-level timestamps.
+- **Refactor**: *Improved Handling of Word Groups.* We now handle incomplete word groups using zip_longest, ensuring no word segments are lost, even if they don’t perfectly fit the pivot.
 - **TODO**:
-  - Implement functionality to create a `.srt` file from the DataFrame.
-  - Develop a separate function to handle timing management.
-  - Investigate options to save a new version of the video with embedded `.srt` subtitles.
+  - Investigate the possibility of adding more transcription models for better accuracy and language support.
+  - Extend support for additional subtitle formats like vtt.
 
 ### play_video
 
@@ -27,6 +27,8 @@ Thank you for your interest in contributing to my project! This project aims to 
 - **TODO:**
   - **Silence Detection**: Probably will check if the ending point of the last word is >=1sec apart of the starting point of the next word.
   - **Exclusion Approach**: When the `.srt` file is created, we will exclude these in-between time sections.
+- **SOLUTION:**
+  - Made with srt files exactly on the timestamps
 
 ## Input and Output Formats
 
