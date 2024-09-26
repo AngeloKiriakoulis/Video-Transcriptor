@@ -1,8 +1,6 @@
 from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip
 from moviepy.video.tools.subtitles import SubtitlesClip
 import os
-
-
 class VideoSaver:
   def __init__(self, video_path, subtitle_path=None):
     self.video_path = video_path
@@ -34,12 +32,12 @@ class VideoSaver:
     )
 
 # Example usage
-video_path = "videos/input.mp4"
-subtitle_path = "output/output.srt"
-output_path = "output/output.mp4"
+# video_path = "videos/input.mp4"
+# subtitle_path = "output/output.srt"
+# output_path = "output/output.mp4"
 
-# # Initialize the video player
-saver = VideoSaver(video_path, subtitle_path)
+# # # Initialize the video player
+# saver = VideoSaver(video_path, subtitle_path)
 
-# # Save the video with subtitles
-saver.save_video_with_subtitles(output_path)
+# # # Save the video with subtitles
+# saver.save_video_with_subtitles(output_path)

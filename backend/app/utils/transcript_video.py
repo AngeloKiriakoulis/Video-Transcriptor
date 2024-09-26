@@ -1,4 +1,3 @@
-import pandas as pd
 import whisper
 import warnings
 from itertools import zip_longest
