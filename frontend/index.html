@@ -6,6 +6,9 @@
   <title>Video Transcriptor</title>
 </head>
 <body>
+  <script>
+    window.fetch("http://127.0.0.1:5000/").then(res=>{console.log(res);})
+  </script>
   <form action="{{url_for('upload')}}" method="post" enctype="multipart/form-data">
     <input type="file" name="video" accept=".mp4">
     <input type="submit" value="Upload">

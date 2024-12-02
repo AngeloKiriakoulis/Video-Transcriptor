@@ -7,6 +7,9 @@
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
 </head>
 <body>
+    <script>
+        window.fetch("http://127.0.0.1:5000/download").then(res=>{console.log(res);})
+    </script>
     <div class="container">
         <h1>Your video is ready!</h1>
         <p>Click the link below to download your video with subtitles:</p>
